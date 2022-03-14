@@ -491,10 +491,10 @@ class Aio():
 			else:
 				generador += str(random.randint(0,9)) + str(random.randint(0,9)) + str(random.randint(0,9)) + str(random.randint(0,9))
 
-			r = requests.get("https://bin-checker.net/api/" + generador)
+			r = requests.get("https://api.bincodes.com/bin/" + generador)
 			json = r.json()
 			country = json["country"]
-			codigo = country["code"]
+			codigo = country["countrycode"]
 
 			if codigo == country0:
 				print("CC: " + str(generador))
